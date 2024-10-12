@@ -92,15 +92,12 @@ public class Transaction {
         String operationType = resultSet.getString("operation_type");
         Date operationDate = resultSet.getTimestamp("operation_date");
 
-        // Retornar una nueva instancia de Transaction
         return new Transaction(id, dpi, field, oldValue, newValue, operationType, operationDate);
     }
 
-    // Método para convertir un ResultSet a una lista de objetos Transaction
     public static List<Transaction> parseResultSetToTransactionList(ResultSet resultSet) throws SQLException {
         List<Transaction> transactionList = new ArrayList<>();
 
-        // Iterar sobre cada fila del ResultSet
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
             String dpi = resultSet.getString("dpi");
@@ -110,12 +107,10 @@ public class Transaction {
             String operationType = resultSet.getString("operation_type");
             Date operationDate = resultSet.getTimestamp("operation_date");
 
-            // Crear un nuevo objeto Transaction y agregarlo a la lista
             Transaction transaction = new Transaction(id, dpi, field, oldValue, newValue, operationType, operationDate);
             transactionList.add(transaction);
         }
 
-        // Retornar la lista de Transaction
         return transactionList;
     }
 

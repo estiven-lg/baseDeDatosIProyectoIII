@@ -55,7 +55,6 @@ public class SqlQueryExecutor {
             // Si el INSERT falla, probablemente ya existe el registro, entonces hacer el UPDATE
             System.out.println(ex.getSQLState());
             if (ex.getSQLState().equals("23000") || ex.getSQLState().equals("23505")) {
-                System.out.println(ex.getSQLState() + "esta persona ya existe pero la vamos a actualizar");
                 this.updatePerson(person);
             } else {
                 Logger.getLogger(SqlQueryExecutor.class.getName()).log(Level.SEVERE, null, ex);

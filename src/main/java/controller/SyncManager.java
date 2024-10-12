@@ -3,7 +3,6 @@ package controller;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import static java.lang.Math.log;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -62,39 +61,30 @@ public class SyncManager {
 
         Map<String, SyncItem> transactionsMap = new HashMap<>();
 
-        // Iterar sobre cada transacción en la lista
         for (Transaction transaction : transactionsDB1) {
-            String dpi = transaction.getDpi(); // Obtener el dpi de la transacción
-            String field = transaction.getField(); // Obtener el field de la transacción
+            String dpi = transaction.getDpi();
+            String field = transaction.getField();
 
-            // Si el dpi aún no está en el mapa, agregar un nuevo mapa vacío para ese dpi
             transactionsMap.putIfAbsent(dpi, new SyncItem(new HashMap<>()));
-
-            // Obtener el mapa de transacciones por field para este dpi
             SyncItem fieldMap = transactionsMap.get(dpi);
 
             fieldMap.setDB1(true);
-            // Si el field ya existe en el mapa y la transacción existente tiene una fecha más reciente, la reemplazamos
             if (!fieldMap.item.containsKey(field) || fieldMap.item.get(field).getOperationDate().before(transaction.getOperationDate())) {
-                fieldMap.item.put(field, transaction); // Agregar o actualizar la transacción más reciente para ese field
+                fieldMap.item.put(field, transaction);
             }
         }
 
-        // Iterar sobre cada transacción en la lista
         for (Transaction transaction : transactionsDB2) {
-            String dpi = transaction.getDpi(); // Obtener el dpi de la transacción
-            String field = transaction.getField(); // Obtener el field de la transacción
+            String dpi = transaction.getDpi();
+            String field = transaction.getField();
 
-            // Si el dpi aún no está en el mapa, agregar un nuevo mapa vacío para ese dpi
             transactionsMap.putIfAbsent(dpi, new SyncItem(new HashMap<>()));
 
-            // Obtener el mapa de transacciones por field para este dpi
             SyncItem fieldMap = transactionsMap.get(dpi);
 
             fieldMap.setDB2(true);
-            // Si el field ya existe en el mapa y la transacción existente tiene una fecha más reciente, la reemplazamos
             if (!fieldMap.item.containsKey(field) || fieldMap.item.get(field).getOperationDate().before(transaction.getOperationDate())) {
-                fieldMap.item.put(field, transaction); // Agregar o actualizar la transacción más reciente para ese field
+                fieldMap.item.put(field, transaction);
             }
         }
 
@@ -126,8 +116,6 @@ public class SyncManager {
                     && transactionInsert.getOperationDate().before(transactionDelete.getOperationDate())
                     || transactionInsert == null) {
 
-                System.out.println("adios :" + dpi);
-
                 if (itemSync.OriginDB1) {
                     DB2.deletePerson(dpi);
                 }
@@ -145,7 +133,6 @@ public class SyncManager {
             }
 
             if (person == null) {
-                System.out.println("no se encontro a la persona");
                 continue;
             }
 
@@ -201,9 +188,8 @@ public class SyncManager {
             writer.write("******************" + title + "******************\n");
 
             for (Transaction transaccion : transaction) {
-                // Escribimos cada transacción en el archivo usando su método toString()
                 writer.write(transaccion.toString());
-                writer.newLine();  // Añade una línea en blanco entre transacciones para mayor legibilidad
+                writer.newLine();
                 writer.write("-----------------------------------------------------------------");
                 writer.newLine();
             }

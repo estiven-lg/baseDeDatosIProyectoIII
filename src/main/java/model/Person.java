@@ -3,7 +3,6 @@ package model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Person {
@@ -138,9 +137,8 @@ public class Person {
     public static List<Person> parseResultSetToPersonList(ResultSet resultSet) throws SQLException {
         List<Person> persons = new ArrayList<>();
 
-        // Iterar sobre el ResultSet para cada fila
         while (resultSet.next()) {
-            // Obtener los campos del ResultSet y mapearlos a los atributos de la clase Person
+
             String dpi = resultSet.getString("dpi");
             String firstName = resultSet.getString("first_name");
             String secondName = resultSet.getString("second_name");
@@ -152,18 +150,14 @@ public class Person {
             float baseSalary = resultSet.getFloat("base_salary");
             float bonus = resultSet.getFloat("bonus");
 
-            // Crear un objeto Person con los datos obtenidos
             Person person = new Person(dpi, firstName, secondName, firstSurname, secondSurname,
                     homeAddress, homePhone, mobilePhone, baseSalary, bonus);
 
-            // Añadir el objeto Person a la lista
             persons.add(person);
         }
 
-        // Devolver la lista de personas
         return persons;
     }
-
 
     @Override
     public String toString() {

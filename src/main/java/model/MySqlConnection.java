@@ -12,7 +12,6 @@ public class MySqlConnection {
     private static MySqlConnection instance;
     private Connection connection;
     private Statement statement;
-
     private String username = "root";
     private String password = "1234";
     private String host = "localhost:3306";
