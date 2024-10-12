@@ -114,7 +114,7 @@ public class SyncManager {
             if (transactionDelete != null
                     && transactionInsert != null
                     && transactionInsert.getOperationDate().before(transactionDelete.getOperationDate())
-                    || transactionInsert == null) {
+                    || (transactionInsert == null && transactionDelete != null))  {
 
                 if (itemSync.OriginDB1) {
                     DB2.deletePerson(dpi);

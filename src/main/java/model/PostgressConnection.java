@@ -14,7 +14,7 @@ public class PostgressConnection {
 
     private String username = "root";
     private String password = "1234";
-    private String host = "localhost:5433";
+    private String host = "localhost:5432";
     private String database = "renap";
 
     String connectionUrl = String.format(

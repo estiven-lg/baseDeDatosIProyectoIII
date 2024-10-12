@@ -163,3 +163,335 @@
 	Tipo de Operacion: DELETE
 	Fecha de Operacion: 2024-10-11 07:25:23
 -----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:53:44******************
+******************DB2 sincronizacion -2024-10-11 21:53:44******************
+******************DB1 sincronizacion -2024-10-11 21:53:45******************
+******************DB2 sincronizacion -2024-10-11 21:53:45******************
+******************DB1 sincronizacion -2024-10-11 21:53:45******************
+******************DB2 sincronizacion -2024-10-11 21:53:45******************
+******************DB1 sincronizacion -2024-10-11 21:54:02******************
+******************DB2 sincronizacion -2024-10-11 21:54:02******************
+	ID de Transacción: 91
+	DPI: 1245
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-12 03:53:49
+-----------------------------------------------------------------
+	ID de Transacción: 92
+	DPI: 46565
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-12 03:53:52
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:54:02******************
+******************DB2 sincronizacion -2024-10-11 21:54:02******************
+******************DB1 sincronizacion -2024-10-11 21:54:02******************
+******************DB2 sincronizacion -2024-10-11 21:54:02******************
+******************DB1 sincronizacion -2024-10-11 21:54:13******************
+	ID de Transacción: 93
+	DPI: 123
+	Campo Modificado: second_name
+	Valor Anterior: toroja
+	Valor Nuevo: torojaa
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 03:54:11
+-----------------------------------------------------------------
+	ID de Transacción: 94
+	DPI: 123
+	Campo Modificado: first_surname
+	Valor Anterior: abcd
+	Valor Nuevo: abcds
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 03:54:11
+-----------------------------------------------------------------
+	ID de Transacción: 95
+	DPI: 123
+	Campo Modificado: second_surname
+	Valor Anterior: fddsf
+	Valor Nuevo: fddsfs
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 03:54:11
+-----------------------------------------------------------------
+	ID de Transacción: 96
+	DPI: 123
+	Campo Modificado: home_address
+	Valor Anterior: 
+	Valor Nuevo: fsdf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 03:54:11
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 21:54:13******************
+******************DB1 sincronizacion -2024-10-11 21:54:15******************
+******************DB2 sincronizacion -2024-10-11 21:54:15******************
+******************DB1 sincronizacion -2024-10-11 21:54:43******************
+******************DB2 sincronizacion -2024-10-11 21:54:43******************
+	ID de Transacción: 97
+	DPI: 123
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-12 03:54:18
+-----------------------------------------------------------------
+	ID de Transacción: 98
+	DPI: 123
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-12 03:54:41
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:54:51******************
+******************DB2 sincronizacion -2024-10-11 21:54:51******************
+	ID de Transacción: 70
+	DPI: 123
+	Campo Modificado: first_name
+	Valor Anterior: pedro
+	Valor Nuevo: pedro 2
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 21:54:49
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:56:54******************
+******************DB2 sincronizacion -2024-10-11 21:56:54******************
+******************DB1 sincronizacion -2024-10-11 21:57:03******************
+******************DB2 sincronizacion -2024-10-11 21:57:03******************
+	ID de Transacción: 71
+	DPI: 123
+	Campo Modificado: first_name
+	Valor Anterior: pedro 2
+	Valor Nuevo: pedro 2d
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 21:57:00
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:58:29******************
+	ID de Transacción: 101
+	DPI: 4646
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-12 03:57:26
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 21:58:29******************
+	ID de Transacción: 72
+	DPI: 4646
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 21:58:27
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 21:59:36******************
+	ID de Transacción: 102
+	DPI: 4646
+	Campo Modificado: home_phone
+	Valor Anterior: 132156
+	Valor Nuevo: 1321565454
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 03:59:25
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 21:59:36******************
+	ID de Transacción: 80
+	DPI: 4646
+	Campo Modificado: second_name
+	Valor Anterior: 
+	Valor Nuevo: uchia
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 21:59:33
+-----------------------------------------------------------------
+	ID de Transacción: 81
+	DPI: 4646
+	Campo Modificado: first_surname
+	Valor Anterior: 
+	Valor Nuevo: sds
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 21:59:33
+-----------------------------------------------------------------
+	ID de Transacción: 82
+	DPI: 4646
+	Campo Modificado: second_surname
+	Valor Anterior: 
+	Valor Nuevo: sdad
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 21:59:33
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 22:01:26******************
+	ID de Transacción: 106
+	DPI: 645
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-12 04:01:24
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 22:01:26******************
+	ID de Transacción: 84
+	DPI: 645
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 21:59:49
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 22:01:28******************
+******************DB2 sincronizacion -2024-10-11 22:01:28******************
+******************DB1 sincronizacion -2024-10-11 22:01:45******************
+	ID de Transacción: 107
+	DPI: 645
+	Campo Modificado: second_name
+	Valor Anterior: 
+	Valor Nuevo: sdf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+	ID de Transacción: 108
+	DPI: 645
+	Campo Modificado: first_surname
+	Valor Anterior: 
+	Valor Nuevo: sdf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+	ID de Transacción: 109
+	DPI: 645
+	Campo Modificado: second_surname
+	Valor Anterior: 
+	Valor Nuevo: sfdf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+	ID de Transacción: 110
+	DPI: 645
+	Campo Modificado: home_address
+	Valor Anterior: 
+	Valor Nuevo: sfdf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+	ID de Transacción: 111
+	DPI: 645
+	Campo Modificado: home_phone
+	Valor Anterior: 
+	Valor Nuevo: sdfd
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+	ID de Transacción: 112
+	DPI: 645
+	Campo Modificado: mobile_phone
+	Valor Anterior: 
+	Valor Nuevo: sfd
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:01:44
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 22:01:45******************
+	ID de Transacción: 88
+	DPI: 645
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 22:01:35
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 22:08:27******************
+	ID de Transacción: 114
+	DPI: 465479
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-12 04:05:44
+-----------------------------------------------------------------
+	ID de Transacción: 115
+	DPI: 123
+	Campo Modificado: second_surname
+	Valor Anterior: 
+	Valor Nuevo: de ramirez
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:07:44
+-----------------------------------------------------------------
+	ID de Transacción: 116
+	DPI: 123
+	Campo Modificado: home_address
+	Valor Anterior: 
+	Valor Nuevo: amatitlan
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:07:44
+-----------------------------------------------------------------
+	ID de Transacción: 117
+	DPI: 123
+	Campo Modificado: home_phone
+	Valor Anterior: 
+	Valor Nuevo: 1654-7892
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:07:44
+-----------------------------------------------------------------
+	ID de Transacción: 118
+	DPI: 123
+	Campo Modificado: mobile_phone
+	Valor Anterior: 
+	Valor Nuevo: 4465-497
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-12 04:07:44
+-----------------------------------------------------------------
+	ID de Transacción: 119
+	DPI: 
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-12 04:08:23
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 22:08:27******************
+	ID de Transacción: 89
+	DPI: 46497
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 22:06:53
+-----------------------------------------------------------------
+	ID de Transacción: 90
+	DPI: 123
+	Campo Modificado: first_name
+	Valor Anterior: pedro 2d
+	Valor Nuevo: pedro
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 22:07:08
+-----------------------------------------------------------------
+	ID de Transacción: 91
+	DPI: 123
+	Campo Modificado: second_name
+	Valor Anterior: 
+	Valor Nuevo: luis
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 22:07:08
+-----------------------------------------------------------------
+	ID de Transacción: 92
+	DPI: 123
+	Campo Modificado: first_surname
+	Valor Anterior: 
+	Valor Nuevo: alvarez
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 22:07:08
+-----------------------------------------------------------------
+	ID de Transacción: 93
+	DPI: 123
+	Campo Modificado: base_salary
+	Valor Anterior: 0
+	Valor Nuevo: 1500
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 22:07:59
+-----------------------------------------------------------------
+	ID de Transacción: 94
+	DPI: 123
+	Campo Modificado: bonus
+	Valor Anterior: 0
+	Valor Nuevo: 15500
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 22:07:59
+-----------------------------------------------------------------
