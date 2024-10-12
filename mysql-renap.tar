@@ -1,0 +1,296 @@
+-- MariaDB dump 10.19  Distrib 10.11.6-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: renap
+-- ------------------------------------------------------
+-- Server version	9.0.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `person`
+--
+
+DROP TABLE IF EXISTS `person`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `person` (
+  `dpi` varchar(20) NOT NULL,
+  `first_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `second_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `first_surname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `second_surname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `home_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `home_phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `mobile_phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `base_salary` float DEFAULT NULL,
+  `bonus` float DEFAULT NULL,
+  PRIMARY KEY (`dpi`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `person`
+--
+
+LOCK TABLES `person` WRITE;
+/*!40000 ALTER TABLE `person` DISABLE KEYS */;
+INSERT INTO `person` VALUES
+('123','ana','toroja','abcd','fddsf','','1234-5678','',150,150),
+('1245','sdf','','','','','','',0,0),
+('46565','Tobias','luis','perez','alvarez','su casa','12345-487','1465-4687',10,10);
+/*!40000 ALTER TABLE `person` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `INSERT_PERSON_AFTER` AFTER INSERT ON `person` FOR EACH ROW BEGIN 
+    DECLARE v_dpi VARCHAR(20);
+    DECLARE v_field VARCHAR(100);
+    DECLARE v_operation_type VARCHAR(50);
+    DECLARE v_operation_date DATETIME;
+
+    SET v_dpi = NEW.dpi;
+    SET v_field = '*INSERT*';
+    SET v_operation_type = 'INSERT';
+    SET v_operation_date = NOW();
+        
+    -- Insertar en la tabla transaction
+    INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+    VALUES (v_dpi, v_field, NULL, NULL, v_operation_type, v_operation_date)
+    ON DUPLICATE KEY UPDATE 
+        old_value = VALUES(old_value),
+        new_value = VALUES(new_value),
+        operation_type = VALUES(operation_type),
+        operation_date = VALUES(operation_date);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `UPDATE_PERSON_AFTER` AFTER UPDATE ON `person` FOR EACH ROW BEGIN
+    DECLARE v_dpi VARCHAR(20);
+    DECLARE v_field VARCHAR(100);
+    DECLARE v_old_value TEXT;
+    DECLARE v_new_value TEXT;
+    DECLARE v_operation_type VARCHAR(50);
+    DECLARE v_operation_date DATETIME;
+
+    SET v_dpi = NEW.dpi;
+    SET v_operation_type = 'UPDATE';
+    SET v_operation_date = NOW();
+
+    -- Comparar cada campo y registrar el cambio
+    IF OLD.first_name <> NEW.first_name THEN
+        SET v_field = 'first_name';
+        SET v_old_value = OLD.first_name;
+        SET v_new_value = NEW.first_name;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.second_name <> NEW.second_name THEN
+        SET v_field = 'second_name';
+        SET v_old_value = OLD.second_name;
+        SET v_new_value = NEW.second_name;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.first_surname <> NEW.first_surname THEN
+        SET v_field = 'first_surname';
+        SET v_old_value = OLD.first_surname;
+        SET v_new_value = NEW.first_surname;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.second_surname <> NEW.second_surname THEN
+        SET v_field = 'second_surname';
+        SET v_old_value = OLD.second_surname;
+        SET v_new_value = NEW.second_surname;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.home_address <> NEW.home_address THEN
+        SET v_field = 'home_address';
+        SET v_old_value = OLD.home_address;
+        SET v_new_value = NEW.home_address;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.home_phone <> NEW.home_phone THEN
+        SET v_field = 'home_phone';
+        SET v_old_value = OLD.home_phone;
+        SET v_new_value = NEW.home_phone;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.mobile_phone <> NEW.mobile_phone THEN
+        SET v_field = 'mobile_phone';
+        SET v_old_value = OLD.mobile_phone;
+        SET v_new_value = NEW.mobile_phone;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.base_salary <> NEW.base_salary THEN
+        SET v_field = 'base_salary';
+        SET v_old_value = OLD.base_salary;
+        SET v_new_value = NEW.base_salary;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+
+    IF OLD.bonus <> NEW.bonus THEN
+        SET v_field = 'bonus';
+        SET v_old_value = OLD.bonus;
+        SET v_new_value = NEW.bonus;
+        INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+        VALUES (v_dpi, v_field, v_old_value, v_new_value, v_operation_type, v_operation_date)
+        ON DUPLICATE KEY UPDATE 
+            old_value = VALUES(old_value),
+            new_value = VALUES(new_value),
+            operation_date = VALUES(operation_date);
+    END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `DELETE_PERSON_AFTER` AFTER DELETE ON `person` FOR EACH ROW BEGIN
+    DECLARE v_dpi VARCHAR(20);
+    DECLARE v_field VARCHAR(100);
+    DECLARE v_old_value TEXT;
+    DECLARE v_new_value TEXT;
+    DECLARE v_operation_type VARCHAR(50);
+    DECLARE v_operation_date DATETIME;
+
+    SET v_dpi = OLD.dpi;
+    SET v_field = '*DELETE*';
+    SET v_operation_type = 'DELETE';
+    SET v_operation_date = NOW();
+
+    INSERT INTO `transaction` (dpi, field, old_value, new_value, operation_type, operation_date)
+    VALUES (v_dpi, v_field, NULL, NULL, v_operation_type, v_operation_date)
+    ON DUPLICATE KEY UPDATE 
+        operation_date = VALUES(operation_date);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `transaction`
+--
+
+DROP TABLE IF EXISTS `transaction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transaction` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `dpi` varchar(20) DEFAULT NULL,
+  `field` varchar(100) DEFAULT NULL,
+  `old_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `new_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `operation_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `operation_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_dpi_field` (`dpi`,`field`)
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transaction`
+--
+
+LOCK TABLES `transaction` WRITE;
+/*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'renap'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-10-11 18:17:01
