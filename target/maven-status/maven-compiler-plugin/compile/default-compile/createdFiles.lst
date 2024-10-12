@@ -1,0 +1,17 @@
+controller/LogSyncManager.class
+view/MySqlView$1.class
+view/MainMenu.class
+com/umg/basedatosiproyectoiii/BaseDatosIProyectoIII.class
+model/TabListener.class
+model/Transaction.class
+view/PostgresView$1.class
+model/PostgressConnection.class
+model/Person.class
+view/LogView.class
+view/MainMenu$1.class
+view/PostgresView.class
+model/MySqlConnection.class
+controller/SyncManager.class
+controller/SqlQueryExecutor.class
+view/MySqlView.class
+controller/SyncManager$SyncItem.class

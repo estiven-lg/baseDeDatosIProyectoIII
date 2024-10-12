@@ -1,0 +1,165 @@
+******************DB2 sincronizacion -2024-10-11 01:13:35******************
+	ID de Transacción: 79
+	DPI: 123
+	Campo Modificado: first_surname
+	Valor Anterior: fd
+	Valor Nuevo: abcd
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 07:13:31
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:15:37******************
+	ID de Transacción: 55
+	DPI: 123
+	Campo Modificado: second_surname
+	Valor Anterior: 
+	Valor Nuevo: fddsf
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 01:15:33
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 01:15:37******************
+	ID de Transacción: 80
+	DPI: 12345
+	Campo Modificado: home_phone
+	Valor Anterior: 
+	Valor Nuevo: 7894-84952
+	Tipo de Operacion: UPDATE
+	Fecha de Operacion: 2024-10-11 07:15:23
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:16:01******************
+******************DB2 sincronizacion -2024-10-11 01:16:01******************
+	ID de Transacción: 57
+	DPI: 135446
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 01:15:57
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:16:05******************
+******************DB2 sincronizacion -2024-10-11 01:16:05******************
+******************DB1 sincronizacion -2024-10-11 01:16:06******************
+******************DB2 sincronizacion -2024-10-11 01:16:06******************
+******************DB1 sincronizacion -2024-10-11 01:16:07******************
+******************DB2 sincronizacion -2024-10-11 01:16:07******************
+******************DB1 sincronizacion -2024-10-11 01:16:07******************
+******************DB2 sincronizacion -2024-10-11 01:16:07******************
+******************DB1 sincronizacion -2024-10-11 01:16:07******************
+******************DB2 sincronizacion -2024-10-11 01:16:07******************
+******************DB1 sincronizacion -2024-10-11 01:16:10******************
+******************DB2 sincronizacion -2024-10-11 01:16:10******************
+******************DB1 sincronizacion -2024-10-11 01:16:13******************
+******************DB2 sincronizacion -2024-10-11 01:16:13******************
+******************DB1 sincronizacion -2024-10-11 01:16:14******************
+******************DB2 sincronizacion -2024-10-11 01:16:14******************
+******************DB1 sincronizacion -2024-10-11 01:16:14******************
+******************DB2 sincronizacion -2024-10-11 01:16:14******************
+******************DB1 sincronizacion -2024-10-11 01:16:14******************
+******************DB2 sincronizacion -2024-10-11 01:16:14******************
+******************DB1 sincronizacion -2024-10-11 01:16:30******************
+******************DB2 sincronizacion -2024-10-11 01:16:30******************
+	ID de Transacción: 82
+	DPI: 12345
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 07:16:27
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:18:43******************
+******************DB2 sincronizacion -2024-10-11 01:18:43******************
+	ID de Transacción: 58
+	DPI: 12345
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 01:18:05
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:19:11******************
+	ID de Transacción: 83
+	DPI: 135446
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 07:19:09
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 01:19:11******************
+******************DB1 sincronizacion -2024-10-11 01:19:22******************
+******************DB2 sincronizacion -2024-10-11 01:19:22******************
+	ID de Transacción: 84
+	DPI: 45645
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 07:19:19
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:19:28******************
+******************DB2 sincronizacion -2024-10-11 01:19:28******************
+	ID de Transacción: 60
+	DPI: 45645
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 01:19:25
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:24:37******************
+	ID de Transacción: 85
+	DPI: 45645
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 07:24:35
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 01:24:37******************
+******************DB1 sincronizacion -2024-10-11 01:24:56******************
+	ID de Transacción: 86
+	DPI: 
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 07:24:50
+-----------------------------------------------------------------
+******************DB2 sincronizacion -2024-10-11 01:24:56******************
+	ID de Transacción: 61
+	DPI: 4645
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 01:24:48
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:24:58******************
+******************DB2 sincronizacion -2024-10-11 01:24:58******************
+******************DB1 sincronizacion -2024-10-11 01:25:18******************
+******************DB2 sincronizacion -2024-10-11 01:25:18******************
+	ID de Transacción: 63
+	DPI: 
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 01:25:06
+-----------------------------------------------------------------
+	ID de Transacción: 64
+	DPI: 1245
+	Campo Modificado: *INSERT*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: INSERT
+	Fecha de Operacion: 2024-10-11 01:25:15
+-----------------------------------------------------------------
+******************DB1 sincronizacion -2024-10-11 01:25:26******************
+******************DB2 sincronizacion -2024-10-11 01:25:26******************
+	ID de Transacción: 90
+	DPI: 4645
+	Campo Modificado: *DELETE*
+	Valor Anterior: N/A
+	Valor Nuevo: N/A
+	Tipo de Operacion: DELETE
+	Fecha de Operacion: 2024-10-11 07:25:23
+-----------------------------------------------------------------
